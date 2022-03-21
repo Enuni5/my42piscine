@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 14:22:30 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/21 21:40:49 by enunez-n         ###   ########.fr       */
+/*   Created: 2022/03/21 18:38:20 by enunez-n          #+#    #+#             */
+/*   Updated: 2022/03/21 18:52:12 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	ft_swap(int *a, int *b);
 
-void	ft_putnbr(int nb)
+int	main(void)
 {
-	if (nb == -2147483648)
-	{
-		ft_putchar('-');
-		ft_putchar('2');
-		ft_putnbr(147483648);
-	}
-	else if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		ft_putchar(nb % 10 + '0');
-	}
-	else if (nb < 10)
-		ft_putchar(nb + '0');
+	int x;
+	int y;
+	int *a;
+	int *b;
+
+	x = 1;
+	y = 2;
+	a = &x;
+	b = &y;
+
+	printf("%p\n", a);
+	printf("%p\n", b);
+
+	printf("%d , %d \n", x, y);
+	ft_swap(a, b);
+	printf("%d , %d", x, y);
+	return (0);
 }

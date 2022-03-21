@@ -1,40 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 14:22:30 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/21 21:40:49 by enunez-n         ###   ########.fr       */
+/*   Created: 2022/03/21 18:38:06 by enunez-n          #+#    #+#             */
+/*   Updated: 2022/03/21 18:57:47 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+void	ft_swap(int *a, int *b)
 {
-	write(1, &c, 1);
-}
+	int c;
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
-	{
-		ft_putchar('-');
-		ft_putchar('2');
-		ft_putnbr(147483648);
-	}
-	else if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		ft_putchar(nb % 10 + '0');
-	}
-	else if (nb < 10)
-		ft_putchar(nb + '0');
+	c = 0;
+
+	c = *a;
+	*a = *b;
+	*b = c;
 }
