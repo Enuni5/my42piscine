@@ -6,14 +6,11 @@
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 20:23:47 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/21 20:46:21 by enunez-n         ###   ########.fr       */
+/*   Updated: 2022/03/22 07:16:28 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+#include <unistd.h>
 
 void	ft_putstr(char *str)
 {
@@ -22,7 +19,7 @@ void	ft_putstr(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		ft_putchar(str[i]);
+		write(1, &str[i], 1);
 		i++;
 	}
 }

@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 20:18:55 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/22 08:45:56 by enunez-n         ###   ########.fr       */
+/*   Created: 2022/03/22 07:18:08 by enunez-n          #+#    #+#             */
+/*   Updated: 2022/03/22 08:47:01 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_div_mod(int *a, int *b)
-{
-	int	cociente;
-	int	resto;
+#include <unistd.h>
 
-	cociente = *a / *b;
-	resto = *a % *b;
-	*a = cociente;
-	*b = resto;
+int	ft_strlen(char *str)
+{
+	int	length;
+
+	length = 0;
+	while (str[length] != '\0')
+		length++;
+	return (length);
 }

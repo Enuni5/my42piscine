@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ex6.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 18:15:45 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/21 18:38:18 by enunez-n         ###   ########.fr       */
+/*   Created: 2022/03/22 07:18:11 by enunez-n          #+#    #+#             */
+/*   Updated: 2022/03/22 09:00:33 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	ft_ft(int *nbr);
+int	ft_strlen(char *str);
 
 int	main(void)
 {
-	int i;
-	int *nbr;
-
-	i = 20;
-	nbr = &i;
-	printf("%d", i);
-	ft_ft(nbr);
-	printf("%d", i);
+	char *str;
+	int length;
+	length = 0;
+	str = "Hola mundo";
+	length = ft_strlen(str);
+	printf("Longitud del string: ");
+	printf("%d", length);
 	return (0);
 }

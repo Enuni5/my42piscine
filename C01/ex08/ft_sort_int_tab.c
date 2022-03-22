@@ -1,43 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 20:19:00 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/21 21:02:00 by enunez-n         ###   ########.fr       */
+/*   Created: 2022/03/22 08:20:11 by enunez-n          #+#    #+#             */
+/*   Updated: 2022/03/22 08:47:26 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-void	ft_ultimate_div_mod(int *a, int *b);
-
-int	main(void)
+void	ft_sort_int_tab(int *tab, int size)
 {
-	int x;
-	int y;
-	int *a;
-	int *b;
+	int	aux;
+	int	i;
 
-	x = 11;
-	y = 5;
-
-	a = &x;
-	b = &y;
-
-	printf("%d\n", x);
-	printf("%d\n", y);
-	printf("%p\n", a);
-	printf("%p\n", b);
-
-	ft_ultimate_div_mod(a, b);
-
-	printf("%d\n", x);
-	printf("%d\n", y);
-	printf("%p\n", a);
-	printf("%p\n", b);
-
-	return (0);
+	while (size >= 0)
+	{
+		i = 0;
+		while (i < size - 1)
+		{
+			if (tab[i] > tab[i + 1])
+			{
+				aux = tab[i];
+				tab[i] = tab[i + 1];
+				tab[i + 1] = aux;
+			}
+			i++;
+		}
+		size--;
+	}
 }

@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 20:18:55 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/22 08:45:56 by enunez-n         ###   ########.fr       */
+/*   Created: 2022/03/21 20:23:49 by enunez-n          #+#    #+#             */
+/*   Updated: 2022/03/22 07:17:24 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_div_mod(int *a, int *b)
-{
-	int	cociente;
-	int	resto;
+#include <stdio.h>
 
-	cociente = *a / *b;
-	resto = *a % *b;
-	*a = cociente;
-	*b = resto;
+void	ft_putstr(char *str);
+
+int	main(void)
+{
+	char	*str;
+
+	str = "Hola mundo";
+	ft_putstr(str);
+	return (0);
 }

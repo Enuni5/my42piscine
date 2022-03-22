@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ex1.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 18:22:17 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/21 18:37:24 by enunez-n         ###   ########.fr       */
+/*   Updated: 2022/03/22 09:06:40 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,20 @@ int	main(void)
 	ptr8 = &ptr7;
 	ptr9 = &ptr8;
 
-	printf("%d", i);
+	printf("Valor anterior: ");
+	printf("%d \n", i);
 	ft_ultimate_ft(ptr9);
-	printf("%d", i);
+	printf("Valor nuevo y todos los punteros: ");
+	printf("%d\n", i);
+	printf("%p\n", ptr);
+	printf("%p\n", ptr2);
+	printf("%p\n", ptr3);
+	printf("%p\n", ptr4);
+	printf("%p\n", ptr5);
+	printf("%p\n", ptr6);
+	printf("%p\n", ptr7);
+	printf("%p\n", ptr8);
+	printf("%p\n", ptr9);
+
 	return (0);
 }

@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ex2.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 20:18:55 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/22 08:45:56 by enunez-n         ###   ########.fr       */
+/*   Created: 2022/03/21 18:38:20 by enunez-n          #+#    #+#             */
+/*   Updated: 2022/03/22 09:06:59 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_div_mod(int *a, int *b)
-{
-	int	cociente;
-	int	resto;
+#include <stdio.h>
 
-	cociente = *a / *b;
-	resto = *a % *b;
-	*a = cociente;
-	*b = resto;
+void	ft_swap(int *a, int *b);
+
+int	main(void)
+{
+	int x;
+	int y;
+	int *a;
+	int *b;
+
+	x = 1;
+	y = 2;
+	a = &x;
+	b = &y;
+
+	printf("Valor de x e y: ");
+	printf("%d, %d \n", x, y);
+	ft_swap(a, b);
+	printf("Valores intercambiados: ");
+	printf("%d, %d", x, y);
+	return (0);
 }
