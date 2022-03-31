@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*   ex6.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 11:26:43 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/29 14:48:16 by enunez-n         ###   ########.fr       */
+/*   Created: 2022/03/31 09:07:27 by enunez-n          #+#    #+#             */
+/*   Updated: 2022/03/31 09:07:42 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
+int	main(void)
 {
-	write(1, &c, 1);
-}
-
-void	ft_putstr_non_printable(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if ((str[i] >= 32 && str[i] <= 126))
-			ft_putchar(str[i]);
-		else
-		{
-			ft_putchar('\\');
-			ft_putchar("0123456789abcdef"[str[i] / 16]);
-			ft_putchar("0123456789abcdef"[str[i] % 16]);
-		}
-		i++;
-	}
+	printf("%i\n", ft_is_prime(4));
+	printf("%i\n", ft_is_prime(2));
+	printf("%i\n", ft_is_prime(3));
+	printf("%i\n", ft_is_prime(53));
+	printf("%i\n", ft_is_prime(50));
+	printf("%i\n", ft_is_prime(20));
+	printf("%i\n", ft_is_prime(17));
+	printf("%i\n", ft_is_prime(3));
+	printf("%i\n", ft_is_prime(49));
+	printf("%i\n", ft_is_prime(6));
+	return (0);
 }

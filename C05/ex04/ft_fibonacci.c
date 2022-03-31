@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 11:26:43 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/29 14:48:16 by enunez-n         ###   ########.fr       */
+/*   Created: 2022/03/30 15:37:17 by enunez-n          #+#    #+#             */
+/*   Updated: 2022/03/30 18:08:24 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
+int	ft_fibonacci(int index)
 {
-	write(1, &c, 1);
+	if (index < 2)
+		return (index);
+	if (index >= 0)
+		return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
+	if (index < 0)
+		return (-1);
+	return (0);
 }
 
-void	ft_putstr_non_printable(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if ((str[i] >= 32 && str[i] <= 126))
-			ft_putchar(str[i]);
-		else
-		{
-			ft_putchar('\\');
-			ft_putchar("0123456789abcdef"[str[i] / 16]);
-			ft_putchar("0123456789abcdef"[str[i] % 16]);
-		}
-		i++;
-	}
-}

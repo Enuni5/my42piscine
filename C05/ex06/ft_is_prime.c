@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 11:26:43 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/29 14:48:16 by enunez-n         ###   ########.fr       */
+/*   Created: 2022/03/31 08:27:46 by enunez-n          #+#    #+#             */
+/*   Updated: 2022/03/31 09:07:35 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putstr_non_printable(char *str)
+int	ft_is_prime(int nb)
 {
 	int	i;
+	int	j;
 
-	i = 0;
-	while (str[i])
+	i = 1;
+	j = 1;
+	while (i < nb)
 	{
-		if ((str[i] >= 32 && str[i] <= 126))
-			ft_putchar(str[i]);
-		else
+		while (j < nb)
 		{
-			ft_putchar('\\');
-			ft_putchar("0123456789abcdef"[str[i] / 16]);
-			ft_putchar("0123456789abcdef"[str[i] % 16]);
+			if (i * j == nb)
+				return (0);
+			j++;
 		}
+		j = 1;
 		i++;
 	}
+	return (1);
 }

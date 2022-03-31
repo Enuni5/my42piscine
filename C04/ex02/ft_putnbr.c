@@ -1,15 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 11:26:43 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/29 14:48:16 by enunez-n         ###   ########.fr       */
+/*   Created: 2022/03/28 13:48:50 by enunez-n          #+#    #+#             */
+/*   Updated: 2022/03/31 10:27:52 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <limits.h>
 #include <unistd.h>
 
 void	ft_putchar(char c)
@@ -17,21 +18,25 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_putstr_non_printable(char *str)
+void	ft_putnbr(int nb)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
+	if (nb <= INT_MAX && nb >= INT_MIN)
 	{
-		if ((str[i] >= 32 && str[i] <= 126))
-			ft_putchar(str[i]);
-		else
+		if (nb == INT_MIN)
 		{
-			ft_putchar('\\');
-			ft_putchar("0123456789abcdef"[str[i] / 16]);
-			ft_putchar("0123456789abcdef"[str[i] % 16]);
+			write(1, "-2147483648", 11);
 		}
-		i++;
+		else if (nb < 0)
+		{
+			ft_putchar('-');
+			ft_putnbr(-nb);
+		}
+		else if (nb > 9)
+		{
+			ft_putnbr(nb / 10);
+			ft_putchar(nb % 10 + '0');
+		}
+		else
+			ft_putchar(nb + '0');
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 14:33:45 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/21 12:15:55 by enunez-n         ###   ########.fr       */
+/*   Updated: 2022/03/26 16:21:45 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,3 +70,15 @@ void	ft_print_combn(int n)
 		}
 	}
 }
+
+
+#include <unistd.h>
+
+void	ft_print_combn(int n);
+
+int	main(void)
+{
+	ft_print_combn(4);
+	return (0);
+}
+ 

@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*   ex4.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 11:26:43 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/29 14:48:16 by enunez-n         ###   ########.fr       */
+/*   Created: 2022/03/30 09:54:52 by enunez-n          #+#    #+#             */
+/*   Updated: 2022/03/31 11:33:10 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
+void	ft_putnbr_base(int nbr, char *base);
+
+int	main(void)
 {
-	write(1, &c, 1);
-}
-
-void	ft_putstr_non_printable(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if ((str[i] >= 32 && str[i] <= 126))
-			ft_putchar(str[i]);
-		else
-		{
-			ft_putchar('\\');
-			ft_putchar("0123456789abcdef"[str[i] / 16]);
-			ft_putchar("0123456789abcdef"[str[i] % 16]);
-		}
-		i++;
-	}
+	ft_putnbr_base(8, "poniguay");
+	printf("\n");
+	ft_putnbr_base(150, "0123456789ABCDEF");
+	printf("\n");
+	ft_putnbr_base(5, "01");
+	return (0);
 }

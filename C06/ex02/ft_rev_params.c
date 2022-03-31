@@ -1,15 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 11:26:43 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/29 14:48:16 by enunez-n         ###   ########.fr       */
+/*   Created: 2022/03/29 18:11:04 by enunez-n          #+#    #+#             */
+/*   Updated: 2022/03/30 11:20:20 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <unistd.h>
 
 void	ft_putchar(char c)
@@ -17,21 +18,23 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_putstr_non_printable(char *str)
+int	main(int argc, char **argv)
 {
 	int	i;
+	int	j;
 
-	i = 0;
-	while (str[i])
+	i = argc - 1;
+	j = 0;
+	while (argv[i] != argv[0])
 	{
-		if ((str[i] >= 32 && str[i] <= 126))
-			ft_putchar(str[i]);
-		else
+		while (argv[i][j] != '\0')
 		{
-			ft_putchar('\\');
-			ft_putchar("0123456789abcdef"[str[i] / 16]);
-			ft_putchar("0123456789abcdef"[str[i] % 16]);
+			ft_putchar(argv[i][j]);
+			j++;
 		}
-		i++;
+		j = 0;
+		ft_putchar('\n');
+		i--;
 	}
+	return (0);
 }

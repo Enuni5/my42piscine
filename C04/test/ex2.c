@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*   ex2.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 11:26:43 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/29 14:48:16 by enunez-n         ###   ########.fr       */
+/*   Created: 2022/03/17 18:14:01 by jseijo-p          #+#    #+#             */
+/*   Updated: 2022/03/31 11:32:19 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <limits.h>
+#include <stdio.h>
 #include <unistd.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	ft_putnbr(int nb);
 
-void	ft_putstr_non_printable(char *str)
+int	main(void)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if ((str[i] >= 32 && str[i] <= 126))
-			ft_putchar(str[i]);
-		else
-		{
-			ft_putchar('\\');
-			ft_putchar("0123456789abcdef"[str[i] / 16]);
-			ft_putchar("0123456789abcdef"[str[i] % 16]);
-		}
-		i++;
-	}
+	ft_putnbr(123456);
+	printf("\n");
+	ft_putnbr(INT_MIN);
+	printf("\n");
+	ft_putnbr(INT_MAX);
+	printf("\n");
+	ft_putnbr(-58);
+	printf("\n");
+	ft_putnbr(0);
+	return (0);
 }

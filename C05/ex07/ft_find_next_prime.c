@@ -1,37 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 11:26:43 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/29 14:48:16 by enunez-n         ###   ########.fr       */
+/*   Created: 2022/03/31 09:08:17 by enunez-n          #+#    #+#             */
+/*   Updated: 2022/03/31 13:10:08 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <limits.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putstr_non_printable(char *str)
+int	ft_is_prime(int nb)
 {
 	int	i;
+	int	j;
 
-	i = 0;
-	while (str[i])
+	i = 1;
+	j = 1;
+	while (i < nb)
 	{
-		if ((str[i] >= 32 && str[i] <= 126))
-			ft_putchar(str[i]);
-		else
+		while (j < nb)
 		{
-			ft_putchar('\\');
-			ft_putchar("0123456789abcdef"[str[i] / 16]);
-			ft_putchar("0123456789abcdef"[str[i] % 16]);
+			if (i * j == nb)
+				return (0);
+			j++;
 		}
+		j = 1;
 		i++;
 	}
+	return (1);
+}
+
+int	ft_find_next_prime(int nb)
+{
+	if (ft_is_prime(nb))
+		return (nb);
+	else if ((nb + 1) != INT_MAX && ft_find_next_prime(nb + 1))
+		return (nb + 1);
+	else
+		return (nb);
+}
+
+int	main(void)
+{
+	int	prime;
+
+	prime = ft_find_next_prime(3);
+	printf("%d", prime);
+	return (0);
 }

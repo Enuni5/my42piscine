@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*   ex1.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 11:26:43 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/29 14:48:16 by enunez-n         ###   ########.fr       */
+/*   Created: 2022/03/21 20:23:49 by enunez-n          #+#    #+#             */
+/*   Updated: 2022/03/31 11:26:26 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
+void	ft_putstr(char *str);
+
+int	main(void)
 {
-	write(1, &c, 1);
-}
+	char	*str;
 
-void	ft_putstr_non_printable(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if ((str[i] >= 32 && str[i] <= 126))
-			ft_putchar(str[i]);
-		else
-		{
-			ft_putchar('\\');
-			ft_putchar("0123456789abcdef"[str[i] / 16]);
-			ft_putchar("0123456789abcdef"[str[i] % 16]);
-		}
-		i++;
-	}
+	str = "Hola mundo \n";
+	ft_putstr(str);
+	str = "Esto es una prueba \n";
+	ft_putstr(str);
+	str = "Otra prueba \n";
+	ft_putstr(str);
+	str = "En un lugar de la mancha... \n";
+	ft_putstr(str);
+	return (0);
 }

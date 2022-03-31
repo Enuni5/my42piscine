@@ -5,24 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/25 12:47:32 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/28 16:33:58 by enunez-n         ###   ########.fr       */
+/*   Created: 2022/03/22 07:18:11 by enunez-n          #+#    #+#             */
+/*   Updated: 2022/03/31 11:30:46 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_strcmp(char *s1, char *s2);
+int	ft_strlen(char *str);
 
 int	main(void)
 {
-	int	count;
+	char	*str;
+	int		length;
 
-	count = ft_strcmp("hola", "hola");
-	printf("%i\n", count);
-	count = ft_strcmp("hala", "hola");
-	printf("%i\n", count);
-	count = ft_strcmp("hola", "hala");
-	printf("%i", count);
+	length = 0;
+	str = "Hola mundo";
+	length = ft_strlen(str);
+	printf("%s\n", str);
+	printf("Longitud del string: ");
+	printf("%d\n", length);
+	str = "Prueba";
+	length = ft_strlen(str);
+	printf("%s\n", str);
+	printf("Longitud del string: ");
+	printf("%d\n", length);
+	str = "Otra prueba";
+	length = ft_strlen(str);
+	printf("%s\n", str);
+	printf("Longitud del string: ");
+	printf("%d\n", length);
+	str = "En un lugar de la mancha...";
+	length = ft_strlen(str);
+	printf("%s\n", str);
+	printf("Longitud del string: ");
+	printf("%d\n", length);
 	return (0);
 }

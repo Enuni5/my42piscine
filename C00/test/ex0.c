@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex5.c                                              :+:      :+:    :+:   */
+/*   ex0.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/25 12:41:26 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/28 16:58:13 by enunez-n         ###   ########.fr       */
+/*   Created: 2022/03/17 18:14:01 by jseijo-p          #+#    #+#             */
+/*   Updated: 2022/03/17 18:18:49 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include <unistd.h>
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
+void	ft_putchar(char c);
 
 int	main(void)
 {
-	char	dest[50] = "Buenas tardes que tal.";
-	char	src[] = "x";
-	int		n;
+	char	letra;
 
-	n = 50;
-	printf("%d \n", ft_strlcat(dest, src, n));
-	printf("%lu", strlcat(dest, src, n));
+	letra = 'A';
+	ft_putchar(letra);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 11:01:57 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/25 12:59:40 by enunez-n         ###   ########.fr       */
+/*   Updated: 2022/03/29 12:28:37 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,16 @@ char	*ft_strstr(char *str, char *to_find)
 	j = 0;
 	if (to_find[0] == 0)
 		return (str);
-	while (str[i])
+	while (str[i] != '\0')
 	{
-		if (str[i] == to_find[j])
+		j = 0;
+		while (str[i + j] == to_find[j] && str[i + j] != '\0')
 		{
-			while (str[i] == to_find[j])
-			{
-				i++;
-				j++;
-			}
-			break ;
+			if (to_find[j + 1] == '\0')
+				return (&str[i]);
+			j++;
 		}
-		else if (str[i] == '\0')
-			return (0);
 		i++;
 	}
-	ptr = &str[i - j];
-	return (ptr);
+	return (0);
 }

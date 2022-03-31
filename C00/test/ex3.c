@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex10.c                                             :+:      :+:    :+:   */
+/*   ex3.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jseijo-p <jseijo-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 09:41:36 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/29 17:35:40 by enunez-n         ###   ########.fr       */
+/*   Created: 2022/03/17 18:14:01 by jseijo-p          #+#    #+#             */
+/*   Updated: 2022/03/17 19:57:22 by jseijo-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
+void	ft_print_numbers(void);
 
 int	main(void)
 {
-	char	dest[6];
-	char	*src;
-
-	src = "Hola Mundo";
-	
-	printf("%d", ft_strlcpy(dest, src, 15));
-	printf(" ");
-	printf("%s", dest);
-	return (0);
+	ft_print_numbers();
+	return (1);
 }
