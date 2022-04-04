@@ -6,7 +6,7 @@
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 12:31:05 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/30 12:44:19 by enunez-n         ###   ########.fr       */
+/*   Updated: 2022/04/01 07:32:59 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,24 @@ int	ft_recursive_power(int nb, int power);
 
 int	main(void)
 {
-	printf("%d", ft_recursive_power(2, 5));
+	int	power;
+	int	nbr;
+
+	nbr = 2;
+	power = 8;
+	printf("%i elevado a %i: ", nbr, power);
+	printf("%d\n", ft_recursive_power(nbr, power));
+	nbr = 5;
+	power = 5;
+	printf("%i elevado a %i: ", nbr, power);
+	printf("%d\n", ft_recursive_power(nbr, power));
+	nbr = 8;
+	power = 4;
+	printf("%i elevado a %i: ", nbr, power);
+	printf("%d\n", ft_recursive_power(nbr, power));
+	nbr = 10;
+	power = 7;
+	printf("%i elevado a %i: ", nbr, power);
+	printf("%d\n", ft_recursive_power(nbr, power));
 	return (0);
 }

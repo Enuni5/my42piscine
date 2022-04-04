@@ -6,7 +6,7 @@
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 18:09:51 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/31 08:26:16 by enunez-n         ###   ########.fr       */
+/*   Updated: 2022/04/04 07:51:37 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_sqrt(int nb)
 		while (thesame * thesame != nb)
 		{
 			thesame++;
-			if (thesame >= (nb / 2))
+			if (thesame > (nb / 2) || thesame >= 46341)
 				return (0);
 		}
 	}

@@ -6,11 +6,10 @@
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:11:04 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/30 11:20:20 by enunez-n         ###   ########.fr       */
+/*   Updated: 2022/04/01 08:12:28 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
 
 void	ft_putchar(char c)

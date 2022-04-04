@@ -6,11 +6,9 @@
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 11:53:02 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/03/30 12:55:40 by enunez-n         ###   ########.fr       */
+/*   Updated: 2022/04/04 07:49:03 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_iterative_power(int nb, int power)
 {
